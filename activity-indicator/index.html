@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Activity Indicator Demo</title>
+  <link rel="stylesheet" href="activity-indicator.css">
+  <script src="activity-indicator.js"></script>
+</head>
+
+<body>
+  <h1>Text Activity Indicator</h1>
+  <p>
+    Create your own custom scrolling text activity indicator with this little snippet. Set the text, size, speed, and
+    color for a custom scrolling message. makeTestIndicator() returns both a DOM node and a setter method for setting
+    the current state of the indicator. makeTextIndicatorWithBlockout() does the same, but also places a white screen over the page to prevent additional button clicks. 
+  </p>
+
+  <p>
+    Thanks to <a href="https://hipsum.co/">hipsum.co</a> for supplying the Hipster Ipsum.
+  </p>
+  Indicator with a 3 second timeout <button onclick="startIndicator()">Demo</button> <br>
+  Block out indicator with a 3 second timeout <button onclick="startBlockoutIndicator()">Demo</button> <br>
+
+  Trip yourself out by clicking the first, then the second demo in immediate succession :)
+
+  <script>
+    let [block, setBlockoutIndicator] = makeTextIndicatorWithBlockout("......LOADING", 30, 2, 'blue');
+    let [indicator, setIndicator] = makeTextIndicator("ONLY TEXT ", 45, 4, 'red');
+    setBlockoutIndicator(false);
+    setIndicator(false);
+    document.body.appendChild(block);
+    document.body.appendChild(indicator);
+    function startBlockoutIndicator() {
+      setBlockoutIndicator(true);
+      setTimeout(_ => { setBlockoutIndicator(false) }, 3000);
+    }
+    function startIndicator() {
+      setIndicator(true);
+      setTimeout(_ => { setIndicator(false) }, 3000);
+    }
+  </script>
+</body>
+
+</html>
