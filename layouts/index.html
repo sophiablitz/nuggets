@@ -1,12 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Layouts</title>
+  <title>Webpage Layouts</title>
 </head>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  .container {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: 50px calc(100vh - 100px) 50px;
+    grid-template-areas: "header header"
+      "sidebar main"
+      "footer footer";
+  }
+
+  nav {
+    background-color: blue;
+    color: white;
+    padding: 20px;
+    grid-area: header;
+  }
+
+  nav a {
+    background: none;
+    color: white;
+    border: none;
+    padding: 5px;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  nav div {
+    display: inline-block;
+  }
+
+  nav a:hover {
+    cursor: pointer;
+    font-style: italic;
+  }
+
+  #logo {
+    padding-right: 20px;
+  }
+
+  footer {
+    width: 100%;
+    background-color: blue;
+    color: white;
+    padding: 20px;
+    grid-area: footer;
+  }
+
+  #sidebar {
+    background-color: white;
+    text-align: center;
+    color: blue;
+    grid-area: sidebar;
+    padding: 10px 0px;
+  }
+
+
+  #sidebar a {
+    width: 100%;
+    margin: 5px 0px;
+    padding: 10px;
+    background-color: rgb(184, 184, 242);
+    color: white;
+    border: none;
+    text-decoration: none;
+    display: block;
+  }
+
+  #sidebar a:hover {
+    cursor: pointer;
+    font-style: italic;
+    background-color: lightblue;
+  }
+
+
+  #main {
+    background-color: rgb(184, 184, 242);
+    color: blue;
+    grid-area: main;
+    padding: 10px 25px;
+  }
+
+  p {
+    padding: 10px 0px;
+  }
+
+  .scrollable {
+    overflow-y: scroll;
+  }
+</style>
+
 <body>
-  Simple web layouts. That's all.
-  
+  <div class='container'>
+
+    <nav>
+      <div id='logo'>Logo</div>
+      <div>
+        <a>Forage</a>
+        <a>Quinoa</a>
+        <a>Leggings</a>
+        <a>Man bun</a>
+        <a>Polaroid</a>
+        <a>Kombucha</a>
+      </div>
+    </nav>
+
+    <div id="sidebar" class="scrollable">
+      <h1>Layouts</h1>
+      <a href="./basic/basic.html">Fixed header and footer</a>
+      <a href="./sidebar/sidebar-float-left.html">Sidebar (Float Left)</a>
+      <a href="./sidebar/sidebar-grid-left.html">Sidebar (Grid, left)</a>
+      <a href="./sidebar/sidebar-grid-right.html">Sidebar (Grid, right)</a>
+      <a href="./panel/panel.html">Panel</a>
+      <a href="./panel/panel-image.html">Panel Images</a>
+    </div>
+    <div id='main' class="scrollable">
+      <h1>Web page Layouts</h1>
+      <p>
+
+        A small collection of layout examples. Check out <a href="https://hipsum.co">Hipster Ipsum</a> for my ipsum
+        content.
+      </p>
+    </div>
+
+    <footer class='footer'>
+      Fixed Footer
+    </footer>
+  </div>
 </body>
+
 </html>

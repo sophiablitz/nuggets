@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sidebar (float)</title>
+</head>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  nav {
+    width: 100%;
+    background-color: blue;
+    color: white;
+    position: fixed;
+    top: 0;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  nav button {
+    background: none;
+    color: white;
+    border: none;
+    padding: 5px;
+  }
+
+  nav button:hover {
+    cursor: pointer;
+    font-style: italic;
+  }
+
+  #logo {
+    float: left;
+    padding-right: 20px;
+  }
+
+  footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: blue;
+    color: white;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  #sidebar {
+    width: 200px;
+    background-color: white;
+    float: left;
+    text-align: center;
+    color: blue;
+    padding: 20px 0px 300px 0px;
+  }
+
+  #sidebar {
+    /* position: fixed; */
+    height: calc(100vh - 130px);
+    overflow-y: scroll;
+    margin-top: 10px;
+  }
+
+
+  #sidebar button {
+    width: 100%;
+    margin: 5px 0px;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: rgb(184, 184, 242);
+    color: white;
+    border: none;
+  }
+
+  #sidebar button:hover {
+    cursor: pointer;
+    font-style: italic;
+    background-color: lightblue;
+  }
+
+
+  main {
+    margin-top: 55px;
+    margin-bottom: 55px;
+    width: 100%;
+    background-color: rgb(184, 184, 242);
+    color: blue;
+    padding: 20px 100px 20px 220px;
+    box-sizing: border-box;
+  }
+
+  p {
+    padding: 10px 0px;
+  }
+</style>
+
+<body>
+  <nav>
+    Fixed Navbar
+    <button>Option 1</button>
+
+    <button>Option 2</button>
+
+    <button>Option 3</button>
+
+    <button>Option 4</button>
+
+    <button>Option 2</button>
+
+    <button>Option 3</button>
+    <div id='logo'>Logo</div>
+  </nav>
+  <div id="sidebar">
+    <h1>Sidebar</h1>
+    <button>Option 1</button> <br>
+
+    <button>Option 2</button><br>
+
+    <button>Option 3</button><br>
+
+    <button>Option 4</button><br>
+
+    <button>Option 2</button><br>
+
+    <button>Option 3</button><br>
+  </div>
+  <main>
+    <h1>Main Content</h1>
+    <p>
+      I'm baby pabst mlkshk adaptogen narwhal sustainable. Sustainable ethical art party ramps tattooed humblebrag, kogi
+      gastropub poutine keytar chambray seitan kitsch. Venmo bespoke hammock, selfies pug waistcoat freegan pop-up.
+      Shoreditch yuccie flannel intelligentsia glossier. Slow-carb organic next level trust fund pitchfork, pinterest
+      cronut wayfarers. Ugh wolf gentrify, gastropub you probably haven't heard of them pickled next level typewriter
+      selvage asymmetrical pitchfork scenester flexitarian.
+    </p>
+    <p>
+
+      Keytar wayfarers schlitz, helvetica pickled next level four dollar toast. Snackwave 3 wolf moon readymade
+      adaptogen
+      plaid lumbersexual authentic master cleanse poke. Etsy raclette godard put a bird on it authentic cloud bread fam.
+      Try-hard pinterest pour-over, offal ethical flannel lomo ugh portland thundercats. Pour-over health goth synth
+      fixie.
+      Hella chambray before they sold out umami man bun scenester. Scenester truffaut cloud bread palo santo subway tile
+      vegan
+      pitchfork, twee YOLO slow-carb art party prism.
+
+    </p>
+    <p>
+      Umami beard offal polaroid viral taxidermy. Fanny pack hashtag before they sold out, semiotics affogato +1 organic
+      iceland poke bicycle rights deep v la croix. Hell of hot chicken cray, vinyl gochujang kogi keffiyeh portland
+      woke.
+      Taiyaki air plant cronut schlitz typewriter lo-fi cred brunch hashtag.
+    </p>
+    <p>
+      Stumptown woke tbh iceland, put a bird on it four loko venmo selvage everyday carry single-origin coffee
+      wayfarers.
+      Williamsburg skateboard keytar, meggings poke lo-fi air plant selfies ugh direct trade shaman slow-carb adaptogen
+      letterpress. Kogi narwhal mlkshk, organic 3 wolf moon readymade chillwave shoreditch umami. Shoreditch
+      farm-to-table
+      direct trade selfies austin migas typewriter vice YOLO chillwave biodiesel gastropub live-edge chicharrones green
+      juice.
+      Truffaut pork belly blog authentic.
+    </p>
+    <p>
+      Skateboard franzen farm-to-table, +1 cloud bread jean shorts squid mlkshk narwhal 3 wolf moon man braid ennui
+      tattooed.
+      Church-key affogato seitan, plaid artisan polaroid narwhal offal leggings hammock gastropub. Brooklyn celiac
+      health goth
+      pug, squid kale chips disrupt swag asymmetrical vegan. Seitan vinyl mlkshk green juice selvage listicle readymade
+      whatever fanny pack irony wayfarers polaroid farm-to-table aesthetic drinking vinegar. Ugh squid tumeric
+      literally. Put
+      a bird on it helvetica DIY palo santo gochujang, truffaut cloud bread pinterest lumbersexual four loko 90's
+      unicorn
+      8-bit echo park af.I'm baby pabst mlkshk adaptogen narwhal sustainable. Sustainable ethical art party ramps
+      tattooed
+      humblebrag, kogi gastropub poutine keytar chambray seitan kitsch.
+    </p>
+    <p>
+      Venmo bespoke hammock, selfies pug waistcoat freegan pop-up. Shoreditch
+      yuccie flannel intelligentsia glossier. Slow-carb organic next level trust fund pitchfork, pinterest cronut
+      wayfarers.
+      Ugh wolf gentrify, gastropub you probably haven't heard of them pickled next level typewriter selvage asymmetrical
+      pitchfork scenester flexitarian.
+    </p>
+    <p>
+      I'm baby pabst mlkshk adaptogen narwhal sustainable. Sustainable ethical art party ramps tattooed humblebrag, kogi
+      gastropub poutine keytar chambray seitan kitsch. Venmo bespoke hammock, selfies pug waistcoat freegan pop-up.
+      Shoreditch yuccie flannel intelligentsia glossier. Slow-carb organic next level trust fund pitchfork, pinterest
+      cronut wayfarers. Ugh wolf gentrify, gastropub you probably haven't heard of them pickled next level typewriter
+      selvage asymmetrical pitchfork scenester flexitarian.
+    </p>
+    <p>
+
+      Keytar wayfarers schlitz, helvetica pickled next level four dollar toast. Snackwave 3 wolf moon readymade
+      adaptogen
+      plaid lumbersexual authentic master cleanse poke. Etsy raclette godard put a bird on it authentic cloud bread fam.
+      Try-hard pinterest pour-over, offal ethical flannel lomo ugh portland thundercats. Pour-over health goth synth
+      fixie.
+      Hella chambray before they sold out umami man bun scenester. Scenester truffaut cloud bread palo santo subway tile
+      vegan
+      pitchfork, twee YOLO slow-carb art party prism.
+
+    </p>
+    <p>
+      Umami beard offal polaroid viral taxidermy. Fanny pack hashtag before they sold out, semiotics affogato +1 organic
+      iceland poke bicycle rights deep v la croix. Hell of hot chicken cray, vinyl gochujang kogi keffiyeh portland
+      woke.
+      Taiyaki air plant cronut schlitz typewriter lo-fi cred brunch hashtag.
+    </p>
+    <p>
+      Stumptown woke tbh iceland, put a bird on it four loko venmo selvage everyday carry single-origin coffee
+      wayfarers.
+      Williamsburg skateboard keytar, meggings poke lo-fi air plant selfies ugh direct trade shaman slow-carb adaptogen
+      letterpress. Kogi narwhal mlkshk, organic 3 wolf moon readymade chillwave shoreditch umami. Shoreditch
+      farm-to-table
+      direct trade selfies austin migas typewriter vice YOLO chillwave biodiesel gastropub live-edge chicharrones green
+      juice.
+      Truffaut pork belly blog authentic.
+    </p>
+    <p>
+      Skateboard franzen farm-to-table, +1 cloud bread jean shorts squid mlkshk narwhal 3 wolf moon man braid ennui
+      tattooed.
+      Church-key affogato seitan, plaid artisan polaroid narwhal offal leggings hammock gastropub. Brooklyn celiac
+      health goth
+      pug, squid kale chips disrupt swag asymmetrical vegan. Seitan vinyl mlkshk green juice selvage listicle readymade
+      whatever fanny pack irony wayfarers polaroid farm-to-table aesthetic drinking vinegar. Ugh squid tumeric
+      literally. Put
+      a bird on it helvetica DIY palo santo gochujang, truffaut cloud bread pinterest lumbersexual four loko 90's
+      unicorn
+      8-bit echo park af.I'm baby pabst mlkshk adaptogen narwhal sustainable. Sustainable ethical art party ramps
+      tattooed
+      humblebrag, kogi gastropub poutine keytar chambray seitan kitsch.
+    </p>
+    <p>
+      Venmo bespoke hammock, selfies pug waistcoat freegan pop-up. Shoreditch
+      yuccie flannel intelligentsia glossier. Slow-carb organic next level trust fund pitchfork, pinterest cronut
+      wayfarers.
+      Ugh wolf gentrify, gastropub you probably haven't heard of them pickled next level typewriter selvage asymmetrical
+      pitchfork scenester flexitarian.
+    </p>
+  </main>
+
+  <footer class='footer'>
+    Fixed Footer
+  </footer>
+</body>
+
+</html>
