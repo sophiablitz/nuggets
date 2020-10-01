@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rummikub Timer</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 10% 40% 25% 25%;
+      height: 100vh;
+      text-align: center;
+    }
+
+    #label {
+      padding-top: 5vh;
+      font-size: 8vw;
+    }
+
+    #time {
+      font-size: 35vw;
+      font-weight: bolder;
+      font-family: Arial, Helvetica, sans-serif;
+      padding: 25% 0;
+    }
+
+    #button {
+      line-height: 25vh;
+      background-color: blue;
+      color: white;
+      font-size: 10vw;
+      margin: 10px;
+    }
+
+    .gameControl {
+      display: inline-block;
+      width: 25vw;
+      height: 25vw;
+      line-height: 25vw;
+      margin: 5px;
+    }
+
+    .duration {
+      display: inline-block;
+      width: 20vw;
+      height: 20vw;
+      line-height: 20vw;
+      font-size: 10vw;
+      background-color: lightgray;
+    }
+
+    #start {
+      background-color: lightgreen;
+    }
+
+    #pause {
+      background-color: lightyellow;
+    }
+
+    #stop {
+      background-color: pink;
+    }
+    .duration, .gameControl, #button{
+      border-radius: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+
+    <div id="label">
+      Time Remaining
+     
+    </div>
+    <div id="time">
+      30s
+    </div>
+    <div id="button" onclick="nextTurn()">
+      Next Turn
+    </div>
+    <div id="controls">
+      <div id="start" class="gameControl" onclick="startGame()">
+        Start
+      </div>
+      <div id="pause" class="gameControl" onclick="pauseGame()">
+        Pause
+      </div>
+      <div id="stop" class="gameControl" onclick="endGame()">
+        Stop
+      </div>
+      <br>
+      <div id="fifteen" class="duration" onclick="setTimeTo(15)">
+        15s
+      </div>
+      <div id="thirty" class="duration" onclick="setTimeTo(30)">
+        30s
+      </div>
+      <div id="fortyfive" class="duration" onclick="setTimeTo(45)">
+        45s
+      </div>
+      <div id="sixty" class="duration" onclick="setTimeTo(60)">
+        60s
+      </div>
+    </div>
+  </div>
+</body>
+<script>
+  let isRunning = false;
+  let setTime = 30;
+  let timeRemaining = 30;
+  let pauseButton = document.getElementById('pause');
+  let clock = document.getElementById('time');
+  let intervalId = null;
+  function nextTurn() {
+    timeRemaining = setTime;
+    clock.style.backgroundColor = 'white';
+  }
+  function startGame() {
+    if(intervalId) return;
+    timeRemaining = setTime;
+    startClock();
+    pauseButton.innerText = 'Pause';
+  }
+  function pauseGame() {
+    if (intervalId) {
+      stopClock();
+      pauseButton.innerText = 'Resume';
+    } else {
+      startClock();
+      pauseButton.innerText = 'pause';
+    }
+  }
+  function endGame() {
+    stopClock();
+    timeRemaining = setTime;
+    pauseButton.innerText = 'Pause';
+    clock.style.backgroundColor = 'white';
+  }
+
+  // manage interval timer
+  function startClock() {
+    if (intervalId) return;
+    intervalId = setInterval(changeClock, 1000)
+  }
+  function stopClock() {
+    clearInterval(intervalId);
+    intervalId = null;
+  }
+
+  // config -- set the duration of a round, but don't affect clock
+  function setTimeTo(sec) {
+    setTime = sec;
+    if (!intervalId) clock.innerText = setTime;
+  }
+  function changeClock() {
+    if (timeRemaining >= 10) {
+      clock.innerText = timeRemaining--;
+      clock.style.backgroundColor = 'lightgreen';
+    } else if (timeRemaining >= 5) {
+      clock.innerText = timeRemaining--;
+      clock.style.backgroundColor = 'orange';
+    } else if (timeRemaining >= 0) {
+      clock.innerText = timeRemaining--;
+      clock.style.backgroundColor = 'red';
+    } else {
+      timeRemaining = setTime;
+      clock.style.backgroundColor = 'white';
+    }
+
+  }
+</script>
+
+</html>
