@@ -33,7 +33,7 @@
 
     #button {
       line-height: 25vh;
-      background-color: blue;
+      background-color: lightblue;
       color: white;
       font-size: 10vw;
       margin: 10px;
@@ -57,7 +57,7 @@
     }
 
     #start {
-      background-color: lightgreen;
+      background-color: green;
     }
 
     #pause {
@@ -67,7 +67,10 @@
     #stop {
       background-color: pink;
     }
-    .duration, .gameControl, #button{
+
+    .duration,
+    .gameControl,
+    #button {
       border-radius: 10px;
     }
   </style>
@@ -78,7 +81,7 @@
 
     <div id="label">
       Time Remaining
-     
+
     </div>
     <div id="time">
       30s
@@ -116,7 +119,9 @@
   let isRunning = false;
   let setTime = 30;
   let timeRemaining = 30;
+  let nextButton = document.getElementById('button');
   let pauseButton = document.getElementById('pause');
+  let startButton = document.getElementById('start');
   let clock = document.getElementById('time');
   let intervalId = null;
   function nextTurn() {
@@ -124,7 +129,10 @@
     clock.style.backgroundColor = 'white';
   }
   function startGame() {
-    if(intervalId) return;
+    if (intervalId) return;
+    console.log(nextButton);
+    nextButton.style.backgroundColor = 'blue';
+    startButton.style.backgroundColor = 'lightgreen';
     timeRemaining = setTime;
     startClock();
     pauseButton.innerText = 'Pause';
@@ -143,6 +151,8 @@
     timeRemaining = setTime;
     pauseButton.innerText = 'Pause';
     clock.style.backgroundColor = 'white';
+    nextButton.style.backgroundColor = 'lightblue';
+    startButton.style.backgroundColor = 'green';
   }
 
   // manage interval timer
